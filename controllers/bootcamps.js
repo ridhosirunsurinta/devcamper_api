@@ -37,7 +37,7 @@ exports.getBootcamp = async (req, res, next) => {
 // @desc    Create bootcamp
 // @route   POST /api/v1/bootcamps
 // @access  Private
-exports.createBootcamp = async (req, res) => {
+exports.createBootcamp = async (req, res, next) => {
   try {
     const bootcamp = await Bootcamp.create(req.body);
 
