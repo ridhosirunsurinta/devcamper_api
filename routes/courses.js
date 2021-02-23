@@ -15,12 +15,12 @@ const router = express.Router({ mergeParams: true });
 router
   .route('/')
   .get(advancedResults(Course, 'bootcamp'), getCourses)
-  .post(protect, authorize, createCourse); // Protected Route
+  .post(protect, authorize('publisher', 'admin'), createCourse); // Protected Route
 
 router
   .route('/:id')
   .get(getCourse)
-  .put(protect, authorize, updateCourse) // Protected Route
-  .delete(protect, authorize, deleteCourse); // Protected Route
+  .put(protect, authorize('publisher', 'admin'), updateCourse) // Protected Route
+  .delete(protect, authorize('publisher', 'admin'), deleteCourse); // Protected Route
 
 module.exports = router;

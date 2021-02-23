@@ -26,17 +26,17 @@ router
 
 router
   .route('/:id/photo')
-  .put(protect, authorize, uploadBootcampPhoto); // Protected Route
+  .put(protect, authorize('publisher', 'admin'), uploadBootcampPhoto); // Protected Route
 
 router
   .route('/')
   .get(advancedResults(Bootcamp, 'courses'), getBootcamps)
-  .post(protect, authorize, createBootcamp); // Protected Route
+  .post(protect, authorize('publisher', 'admin'), createBootcamp); // Protected Route
 
 router
   .route('/:id')
   .get(getBootcamp)
-  .put(protect, authorize, updateBootcamp) // Protected Route
-  .delete(protect, authorize, deleteBootcamp); // Protected Route
+  .put(protect, authorize('publisher', 'admin'), updateBootcamp) // Protected Route
+  .delete(protect, authorize('publisher', 'admin'), deleteBootcamp); // Protected Route
 
 module.exports = router;
