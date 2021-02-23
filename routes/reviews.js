@@ -2,6 +2,7 @@ const express = require('express');
 const {
   getReviews,
   getReview,
+  createReview,
 } = require('../controllers/reviews');
 const Review = require('../models/Review');
 const advancedResults = require('../middleware/advancedResults')
@@ -17,7 +18,8 @@ router
       select: 'name description',
     }),
     getReviews
-  );
+  )
+  .post(protect, authorize('user', 'admin'), createReview);
 
 router
   .route('/:id')
