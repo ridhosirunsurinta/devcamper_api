@@ -8,6 +8,14 @@ const cookieParser = require('cookie-parser');
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/error');
 
+// Improve API Security
+// Prevent this
+//  {
+//    "email": {"$gt":""},
+//    "password": "123456"
+//  }
+const mongoSanitize = require('express-mongo-sanitize');
+
 // Load ENV vars
 dotenv.config({ path: './config/config.env' });
 
@@ -36,6 +44,9 @@ if (process.env.NODE_ENV === 'development') {
 
 // File upload
 app.use(fileupload());
+
+// Sanitize data
+app.use(mongoSanitize());
 
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
