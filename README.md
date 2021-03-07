@@ -2,7 +2,7 @@
 
 This repo just for learn Node.js & Express.js
 
-## Setup config/config.env
+### Setup config/config.env
 
 1. You need to signup and get a key to fill `GEOCODER_API_KEY`
    https://developer.mapquest.com
@@ -13,7 +13,7 @@ This repo just for learn Node.js & Express.js
 3. (Optional) Signup and get `MONGODB_URI`
    https://account.mongodb.com
 
-## Seeding
+### Seeding
 
 Seeding data from seeder.js
 `node seeder -i`
@@ -21,10 +21,10 @@ Seeding data from seeder.js
 Delete seeding data
 `node seeder -d`
 
-## Run Development
+### Run Development
 
 `npm run dev`
 
-## Run Production
+### Run Production
 
 `npm start`
