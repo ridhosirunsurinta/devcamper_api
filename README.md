@@ -2,7 +2,7 @@
 
 This repo just for learn Node.js & Express.js
 
-### Setup config/config.env
+### Setup `config/config.env`
 
 1. You need to signup and get a key to fill `GEOCODER_API_KEY`
    https://developer.mapquest.com
